@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+  <main class="main-content section-wrapper">
+    <div class="section-content-wide">
+      <div class="section-gap">
+        {% if post_list %}
+          {% if category_name %}
+              <h3 class="post-info center">Posts da categoria {{ category_name }}</h3>
+            {% endif %}
+            {% if tag_name %}
+              <h3 class="post-info center">Posts com a tag {{ tag_name }}</h3>
+            {% endif %}
+            {% if user_name %}
+              <h3 class="post-info center">Posts de {{ user_name }}</h3>
+            {% endif %}
+            {% if search_value %}
+              <h3 class="post-info center">Resultados da busca por "{{ search_value }}"</h3>
+            {% endif %}
+          <div class="card-grid">
+            {% for post in post_list %}
+              {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="not-found center">
+            <h2 class="not-found-description">Nenhum post foi encontrado.</h2>  
+            <p class="not-found-description">
+              Tente usar a barra de pesquisa ou voltar para
+              a <a href="{% url 'blog:index' %}">página inicial</a>.
+            </p>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </main>
+{% endblock content %}

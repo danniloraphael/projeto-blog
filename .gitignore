@@ -1,0 +1,53 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+local_settings.py
+
+# Media and static files
+/media/
+/static/
+staticfiles/
+
+# Virtualenv
+env
+venv
+*.env
+*.venv
+ENV/
+VENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.vscode/
+
+# Os files
+Thumbs.db
+.DS_Store
+
+# Migrations
+*/migrations/*.pyc
+*/migrations/__pycache__/
+*/migrations/*.pyo
+*/migrations/*.log
+*/migrations/*.pot
+*/migrations/*.py
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Test and build
+build/
+dist/
+*.egg-info/
+.eggs/
